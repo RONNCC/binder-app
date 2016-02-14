@@ -83,6 +83,7 @@ class HomeController < ApplicationController
 
   def downtime
     @organizations = Organization.joins(:organization_timeline_entries).where(organization_timeline_entries: {entry_type:2}).distinct
+    @restOfOrgs = Organization.joins("LEFT OUTER JOIN organization_timeline_entries ON organizations.id = organization_timeline_entries.organization_id")
   end
 
   def hardhat_return

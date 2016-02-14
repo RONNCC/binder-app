@@ -21,6 +21,15 @@
         <td style="text-align: right;"><%= format_downtime organization.remaining_downtime %></td>
       </tr>
     <% end %>
+    <% @restOfOrgs.each do |organization| %>
+      <% if organization.organization_category.name != 'Non-Building' %> 
+        <tr>
+         <td><%= link_to organization.short_name, organization_downtime_index_path(organization) %></td>
+          <td><%= organization.organization_category.name %></td>
+          <td style="text-align: right;"><%= format_downtime organization.downtime %></td>
+          <td style="text-align: right;"><%= format_downtime organization.remaining_downtime %></td>      </tr>
+      <% end %> 
+    <% end %>
   </tbody>
 </table>
 

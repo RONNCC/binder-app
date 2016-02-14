@@ -45,7 +45,7 @@ class ApplicationController < ActionController::Base
     @tasks_sidebar = Task.upcoming
     @structural_queue_sidebar = OrganizationTimelineEntry.structural.current
     @electrical_queue_sidebar = OrganizationTimelineEntry.electrical.current
-
+    @checkouts_sidebar = Checkout.current
     @downtime_sidebar = OrganizationTimelineEntry.downtime.current
   end
 
