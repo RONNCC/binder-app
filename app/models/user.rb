@@ -56,4 +56,7 @@ class User < ActiveRecord::Base
     return user
   end
 
+  def to_s
+    "User: {id: #{id}, name: #{name}, email: #{email} } "
+  end
 end
