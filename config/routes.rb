@@ -1,5 +1,9 @@
 Trailerapp::Application.routes.draw do
 
+  resources :events
+
+  resources :event_status_types
+
   resources :documents
   resources :faqs, :except => [:show]
   resources :organizations do
